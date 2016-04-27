@@ -199,7 +199,7 @@ This plugin provides a useful template for your app settings. The keys and value
     angular.module('starter.controllers', [])
     .controller('YourCtrl', function($scope, $ionicSettings) {
         $scope.$on($ionicSettings.changed, function($event, args) {
-            alert(args.key + " -> " + args.value);
+            alert(args.key + ' -> ' + args.value);
         });
     });
     ```
