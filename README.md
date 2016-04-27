@@ -1,4 +1,4 @@
-# ionic-settings  
+# [ionic-settings](http://market.ionic.io/plugins/ionic-settings)  
 
 This plugin provides a useful template for your app settings. The keys and values are stored as app preferences on condition that you use the 
 [corresponding plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`.
