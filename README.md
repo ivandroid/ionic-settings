@@ -8,6 +8,7 @@ This plugin provides a useful template for your app settings. The keys and value
 * grouping of settings
 * include your settings into a view or show them as modal
 * customizing of settings appearance (color, button icons and positions)
+* storage as app preferences using the above mentioned plugin or in `localStorage`
 
 
 ## Usage 
