@@ -34,7 +34,7 @@ This plugin provides a useful template for your app settings. The keys and value
 
     ```javascript
     var settingsWithoutGrouping = {
-        mySelection: { // SETTING KEY
+        mySelection: { // UNIQUE SETTING KEY
             type: 'selection',  // SETTING TYPE
             data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'], // SELECTION ARRAY
             label: 'Selection',  // SETTING LABEL
@@ -71,7 +71,7 @@ This plugin provides a useful template for your app settings. The keys and value
     var settingsWithGrouping = {
         group1: {
             label: 'Group 1', // SETTING GROUP LABEL (OPTIONAL)
-            mySelection: {
+            mySelection: { // UNIQUE SETTING KEY
                 type: 'selection',
                 data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
                 label: 'Selection',
@@ -201,6 +201,22 @@ This plugin provides a useful template for your app settings. The keys and value
         $scope.$on($ionicSettings.changed, function($event, changedSetting) {
             alert(changedSetting.key + ' -> ' + changedSetting.value);
         });
+    });
+    ```
+    
+8. Get and set setting values using `get` and `store` methods of the `$ionicSettings` service.
+
+    ```javascript
+    angular.module('starter.controllers', [])
+    .controller('YourCtrl', function($scope, $ionicSettings) {
+        $scope.store = function(key, value) {
+            $ionicSettings.store(key, value).then(function() {
+                // DO SOMETHING
+            });
+        };
+        $scope.get = function(key) {
+            alert($ionicSettings.get(key));
+        };
     });
     ```
 
