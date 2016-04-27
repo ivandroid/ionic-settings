@@ -64,7 +64,7 @@ This plugin provides a useful template for your app settings. The keys and value
             value: '<p class="padding">Hello World!</p>'
         }
     };
-    var setttingsWithGrouping = {
+    var settingsWithGrouping = {
         group1: {
             label: 'Group 1', // SETTING GROUP LABEL (OPTIONAL)
             mySelection: {
