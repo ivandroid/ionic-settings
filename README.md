@@ -110,6 +110,7 @@ This plugin provides a useful template for your app settings. The keys and value
 5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a PIN, make sure to initialize your settings before the main state of your app is loaded like shown below. Use the `$ionicSettings.enteredWrongPin` event if you want to provide an action on entering a wrong PIN or get the wrong PIN value.
     
     ```javascript
+    // INITIALIZATION IN CONFIG PHASE
     angular.module('starter', ['ionic', 'ionicSettings'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -145,6 +146,25 @@ This plugin provides a useful template for your app settings. The keys and value
                     }
                 }
             })
+    });
+    // INITIALIZATION IN CONTROLLER
+    angular.module('starter.controllers', [])
+    .controller('InfoCtrl', function($scope, $ionicSettings) {
+        $ionicSettings.init({
+            mySelection: {
+                type: 'selection',
+                data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
+                label: 'Selection',
+                value: 'value 1',
+                icon: 'ion-clipboard'
+            },
+            myToggle: {
+                type: 'toggle',
+                label: 'Toggle',
+                value: true,
+                icon: 'ion-toggle'
+            }
+        });
     });
     ```
     
