@@ -36,12 +36,12 @@ This plugin provides a useful template for your app settings. The keys and value
 
     ```javascript
     var settingsWithoutGrouping = {
-        mySelection: { // UNIQUE SETTING KEY
-            type: 'selection',  // SETTING TYPE
+        mySelection: { // UNIQUE KEY
+            type: 'selection',  // TYPE
             data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'], // SELECTION ARRAY
-            label: 'Selection',  // SETTING LABEL
-            value: 'value 1', // SETTING VALUE
-            icon: 'ion-clipboard' // SETTING ION-ICON (OPTIONAL)
+            label: 'Selection',  // LABEL
+            value: 'value 1', // VALUE
+            icon: 'ion-clipboard' // ICON (OPTIONAL)
         },
         myPin: {
             type: 'pin',
@@ -72,8 +72,8 @@ This plugin provides a useful template for your app settings. The keys and value
     };
     var settingsWithGrouping = {
         group1: {
-            label: 'Group 1', // SETTING GROUP LABEL (OPTIONAL)
-            mySelection: { // UNIQUE SETTING KEY
+            label: 'Group 1', // GROUP LABEL (OPTIONAL)
+            mySelection: { // UNIQUE KEY
                 type: 'selection',
                 data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
                 label: 'Selection',
