@@ -198,8 +198,8 @@ This plugin provides a useful template for your app settings. The keys and value
     ```javascript
     angular.module('starter.controllers', [])
     .controller('YourCtrl', function($scope, $ionicSettings) {
-        $scope.$on($ionicSettings.changed, function($event, args) {
-            alert(args.key + ' -> ' + args.value);
+        $scope.$on($ionicSettings.changed, function($event, changedSetting) {
+            alert(changedSetting.key + ' -> ' + changedSetting.value);
         });
     });
     ```
