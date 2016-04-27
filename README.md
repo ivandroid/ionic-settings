@@ -194,6 +194,7 @@ This plugin provides a useful template for your app settings. The keys and value
     </ion-view>
     ```
 7. You can listen to the `$ionicSettings.changed` event to get the key value pair of a currently changed setting. 
+    
     ```javascript
     $scope.$on($ionicSettings.changed, function($event, args) {
         alert(args.key + " -> " + args.value);
