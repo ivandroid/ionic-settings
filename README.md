@@ -126,7 +126,7 @@ This plugin provides a useful template for your app settings. The keys and value
 5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like and pass two additional optional parameters to provide actions on entering correct or wrong pin.
     
     ```javascript
-    // INITIALIZATION IN CONFIG PHASE
+    // INITIALIZATION IN CONFIG PHASE (USING PIN)
     angular.module('starter', ['ionic', 'ionicSettings'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -136,7 +136,6 @@ This plugin provides a useful template for your app settings. The keys and value
                 templateUrl: 'templates/tabs.html',
                 resolve: {
                     settings: function($ionicSettings, $ionicPopup) {
-                        // INITIALIZING SETTINGS
                         function onValidPin() {
                             $ionicPopup.alert({
                                 title: 'Success',
@@ -170,7 +169,7 @@ This plugin provides a useful template for your app settings. The keys and value
                 }
             })
     });
-    // INITIALIZATION IN CONTROLLER
+    // INITIALIZATION IN CONTROLLER (WITHOUT PIN)
     angular.module('starter.controllers', [])
     .controller('InfoCtrl', function($scope, $ionicSettings) {
         $ionicSettings.init({
