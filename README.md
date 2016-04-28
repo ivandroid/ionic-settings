@@ -4,9 +4,6 @@
 This plugin provides a useful template for your app settings. The keys and values are stored as app preferences on condition that you have installed 
 [this plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
 
-## Demo 
-![demo1](http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif)
-
 ## Features 
 * 5 setting types: `selection`, `toggle`, `input`, `range` and `pin`
 * 2 read-only types: `button` and `text`
@@ -15,6 +12,12 @@ This plugin provides a useful template for your app settings. The keys and value
 * customizing of settings appearance (color, icons and button positions)
 * storage as app preferences using the above mentioned plugin, otherwise in `localStorage`
 * touch id support if the [touch id plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
+
+## Demo 
+![demo1](http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif)
+
+## Screenshots
+![screenshot1](http://fs5.directupload.net/images/160429/8tmii2s9.png) ![screenshot2](http://fs5.directupload.net/images/160429/yjl9yyip.png)
 
 ## Usage 
 1. [Buy](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
