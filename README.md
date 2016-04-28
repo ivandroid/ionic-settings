@@ -14,7 +14,7 @@ This plugin provides a useful template for your app settings. The keys and value
 * touch id support if the [touch id plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
 
 ## Screenshots
- <img src="http://fs5.directupload.net/images/160429/rja79x62.png" width="200"> ![screenshot2](http://fs5.directupload.net/images/160429/8tmii2s9.png) ![screenshot3](http://fs5.directupload.net/images/160429/yjl9yyip.png)
+<img src="http://fs5.directupload.net/images/160429/rja79x62.png" width="400"><img src="http://fs5.directupload.net/images/160429/8tmii2s9.png" width="400"><img src="http://fs5.directupload.net/images/160429/yjl9yyip.png" width="400">
 
 ## Demo 
 ![demo1](http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif)
