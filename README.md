@@ -136,18 +136,6 @@ This plugin provides a useful template for your app settings. The keys and value
                 templateUrl: 'templates/tabs.html',
                 resolve: {
                     settings: function($ionicSettings, $ionicPopup) {
-                        function onValidPin() {
-                            $ionicPopup.alert({
-                                title: 'Success',
-                                template: 'Welcome!'
-                            });
-                        }; 
-                        function onInvalidPin() {
-                            $ionicPopup.alert({
-                                title: 'Fail',
-                                template: 'Wrong pin! Try again.'
-                            });
-                        });
                         var settings = {
                             myButton: {
                                 type: 'button',
@@ -164,6 +152,18 @@ This plugin provides a useful template for your app settings. The keys and value
                                 icon: 'ion-locked'
                             }
                         };
+                        function onValidPin() {
+                            $ionicPopup.alert({
+                                title: 'Success',
+                                template: 'Welcome!'
+                            });
+                        }; 
+                        function onInvalidPin() {
+                            $ionicPopup.alert({
+                                title: 'Fail',
+                                template: 'Wrong pin! Try again.'
+                            });
+                        });
                         return $ionicSettings.init(settings, onValidPin, onInvalidPin);
                     }
                 }
