@@ -269,7 +269,7 @@ angular.module('starter', ['ionic', 'ionicSettings'])
 ```
 
 ##### Result
-![demo3](http://i.giphy.com/l3V0E8kPbCY5p7ngc.gif)
+![demo2](http://i.giphy.com/3o6ozuojr5gpCve7bW.gif)
 
 ### Service `$ionicSettings`
 
