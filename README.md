@@ -17,7 +17,7 @@ This plugin provides a useful template for your app settings. The keys and value
 * touch id support if the [plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
 
 ## Usage 
-1. [Download](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
+1. [Buy](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
     
 2. Include the javascript and css files or the minified versions into your `index.html` file.
 
@@ -286,6 +286,10 @@ method|description|return-value
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Retrieval of all settings keys and values|object containing all key value pairs
 `store(key, value)`|Setting a value by key|promise
+
+## Suggestions
+
+Make improvement suggestions! I will react as soon as possible!
 
 ## Author
 
