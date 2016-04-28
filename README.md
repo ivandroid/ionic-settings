@@ -285,6 +285,7 @@ method|description|return-value
 ---|---|---
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Retrieval of all settings keys and values|object containing all key value pairs
+`init(settingsModelObject)`|Initializing of settings|settings model object
 `store(key, value)`|Setting a value by key|promise
 
 ## Suggestions
