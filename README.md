@@ -6,12 +6,13 @@ This plugin provides a useful template for your app settings. The keys and value
 [Get code!](https://gumroad.com/l/lQUJ#)  
 
 ## Demo 
-![demo1](http://i.giphy.com/l3V0G8x0IYSg63mbS.gif)
+![demo1](http://i.giphy.com/l3V0JcNLG7YbMY4Qo.gif)
 
 ## Features 
-* 5 settings types: `selection`, `toggle`, `button`, `text` and `pin` for app protection
+* 5 setting types: `selection`, `toggle`, `input`, `range` and `pin` for app protection
+* 2 additional types: `button` and `text`
 * grouping of settings
-* include your settings into a view or show them as modal
+* including settings into a view or show them as modal
 * customizing of settings appearance (color, icons and button positions)
 * storage as app preferences using the above mentioned plugin, otherwise in `localStorage`
 
@@ -41,19 +42,35 @@ This plugin provides a useful template for your app settings. The keys and value
             data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'], // SELECTION ARRAY
             label: 'Selection',  // LABEL
             value: 'value 1', // VALUE
-            icon: 'ion-clipboard' // ICON (OPTIONAL)
-        },
-        myPin: {
-            type: 'pin',
-            label: 'PIN',
-            value: '',
-            icon: 'ion-locked'
+            icon: 'ion-checkmark-round' // ICON (OPTIONAL)
         },
         myToggle: {
             type: 'toggle',
             label: 'Toggle',
             value: true,
             icon: 'ion-toggle'
+        },
+        myInput: {
+            type: 'input',
+            label: 'Input',
+            inputType: 'text',
+            value: 'Hello World!',
+            icon: 'ion-edit'
+        },
+        myRange: {
+            type: 'range',
+            label: 'Range',
+            iconLeft: 'ion-minus-circled',
+            iconRight: 'ion-plus-circled',
+            min: 0,
+            max: 100,
+            value: 50
+        }
+        myPin: {
+            type: 'pin',
+            label: 'PIN',
+            value: '',
+            icon: 'ion-locked'
         },
         myButton: {
             type: 'button',
@@ -79,12 +96,6 @@ This plugin provides a useful template for your app settings. The keys and value
                 label: 'Selection',
                 value: 'value 1',
                 icon: 'ion-clipboard'
-            },
-            myPin: {
-                type: 'pin',
-                label: 'PIN',
-                value: '',
-                icon: 'ion-locked'
             },
             myToggle: {
                 type: 'toggle',
@@ -251,7 +262,7 @@ angular.module('starter', ['ionic', 'ionicSettings'])
 ```
 
 ##### Result
-![demo3](http://i.giphy.com/3o6ozrMPhscKvZ7Nx6.gif)
+![demo3](http://i.giphy.com/l3V0E8kPbCY5p7ngc.gif)
 
 ### Service `$ionicSettings`
 
