@@ -270,7 +270,7 @@ angular.module('starter', ['ionic', 'ionicSettings'])
 ```
 
 ##### Result
-![demo2](http://i.giphy.com/3o6ozuojr5gpCve7bW.gif)
+<img src="http://i.giphy.com/3o6ozuojr5gpCve7bW.gif" width="300">
 
 ### Service `$ionicSettings`
 
