@@ -8,7 +8,7 @@ This plugin provides a useful template for your app settings. The keys and value
 
 ## Features 
 * 5 setting types: `selection`, `toggle`, `input`, `range` and `pin`
-* 2 additional types: `button` and `text`
+* 2 read-only types: `button` and `text`
 * grouping of settings
 * including settings into a view or show them as modal
 * customizing of settings appearance (color, icons and button positions)
