@@ -123,7 +123,7 @@ This plugin provides a useful template for your app settings. The keys and value
     };
     ```
 
-5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like shown below and provide two additional optional function parameters to provide actions on entering correct or wrong pin.
+5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like and pass two additional optional parameters to provide actions on entering correct or wrong pin.
     
     ```javascript
     // INITIALIZATION IN CONFIG PHASE
@@ -284,7 +284,7 @@ method|description|return-value
 ---|---|---
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Retrieval of all settings keys and values|object containing all key value pairs
-`init(modelObject, onValidPin, onInvalidPin)`|Initializing of settings passing a settings model object and *onValidPin / onInvalidPin* actions|initialized settings model object as promise
+`init(modelObject, onValidPin, onInvalidPin)`|Initializing of settings passing a settings model object and **optional** *onValidPin / onInvalidPin* actions|initialized settings model object as promise
 `store(key, value)`|Setting a value by key|changed setting value as promise
 
 ## Suggestions
