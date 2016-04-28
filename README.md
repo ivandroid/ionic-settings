@@ -291,6 +291,10 @@ method|description|return-value
 
 Make improvement suggestions! I will react as soon as possible!
 
+## Versions
+
+[CHANGELOG](https://github.com/ivandroid/ionic-settings/blob/master/CHANGELOG.md)
+
 ## Author
 
 ☟|☟
