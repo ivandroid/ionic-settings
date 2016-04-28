@@ -8,7 +8,7 @@ This plugin provides a useful template for your app settings. The keys and value
 * 5 setting types: `selection`, `toggle`, `input`, `range` and `pin`
 * 2 read-only types: `button` and `text`
 * grouping of settings
-* including settings into a view or show them as modal
+* including settings into a view or modal view
 * customizing of settings appearance (color, icons and button positions)
 * storage as app preferences using the above mentioned plugin, otherwise in `localStorage`
 * touch id support if the [touch id plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
