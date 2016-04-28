@@ -123,7 +123,7 @@ This plugin provides a useful template for your app settings. The keys and value
     };
     ```
 
-5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin, make sure to initialize your settings before the main state of your app is loaded like shown below. Use the `$ionicSettings.onValidPin` / `$ionicSettings.onInvalidPin` event if you want to provide an action on entering valid / invalid pin.
+5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like shown below. Use the `$ionicSettings.onValidPin` / `$ionicSettings.onInvalidPin` events if you want to provide an action on entering valid / invalid pin.
     
     ```javascript
     // INITIALIZATION IN CONFIG PHASE
@@ -136,37 +136,37 @@ This plugin provides a useful template for your app settings. The keys and value
                 templateUrl: 'templates/tabs.html',
                 resolve: {
                     settings: function($rootScope, $ionicSettings, $ionicPopup) {
-                    // PIN INPUT EVENTS
-                    $rootScope.$on($ionicSettings.onInvalidPin, function($event, value) {
-                        $ionicPopup.alert({
-                            title: 'Fail',
-                            template: 'Wrong pin: ' + value + '. Try again.'
+                        // PIN INPUT EVENTS
+                        $rootScope.$on($ionicSettings.onInvalidPin, function($event, value) {
+                            $ionicPopup.alert({
+                                title: 'Fail',
+                                template: 'Wrong pin: ' + value + '. Try again.'
+                            });
                         });
-                    });
-                    $rootScope.$on($ionicSettings.onValidPin, function() {
-                        $ionicPopup.alert({
-                            title: 'Success',
-                            template: 'Welcome!'
+                        $rootScope.$on($ionicSettings.onValidPin, function() {
+                            $ionicPopup.alert({
+                                title: 'Success',
+                                template: 'Welcome!'
+                            });
                         });
-                    });
-                    // INITIALIZING SETTINGS
-                    var settings = {
-                        myButton: {
-                            type: 'button',
-                            label: 'Button',
-                            onClick: function() {
-                                alert('Hello world!');
+                        // INITIALIZING SETTINGS
+                        var settings = {
+                            myButton: {
+                                type: 'button',
+                                label: 'Button',
+                                onClick: function() {
+                                    alert('Hello world!');
+                                }
+                                icon: 'ion-disc'
+                            },
+                            myPin: {
+                                type: 'pin',
+                                label: 'PIN',
+                                value: '',
+                                icon: 'ion-locked'
                             }
-                            icon: 'ion-disc'
-                        },
-                        myPin: {
-                            type: 'pin',
-                            label: 'PIN',
-                            value: '',
-                            icon: 'ion-locked'
-                        }
-                    };
-                    return $ionicSettings.init(settings);
+                        };
+                        return $ionicSettings.init(settings);
                     }
                 }
             })
