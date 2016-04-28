@@ -1,4 +1,4 @@
-# ionic-settings 
+# <img src="http://fs5.directupload.net/images/160429/qliokhyp.png" width="50"> ionic-settings 
 ### Ionic View ID: 120e45c6
 
 This plugin provides a useful template for your app settings. The keys and values are stored as app preferences on condition that you have installed 
