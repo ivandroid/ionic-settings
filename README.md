@@ -1,4 +1,5 @@
-# ionic-settings (Ionic View ID: 120e45c6)
+# ionic-settings 
+## Ionic View ID: 120e45c6
 
 This plugin provides a useful template for your app settings. The keys and values are stored as app preferences on condition that you use the 
 [corresponding plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
