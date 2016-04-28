@@ -282,7 +282,7 @@ event|description|return value
 method|description|return-value
 ---|---|---
 `get(key)`|Getting a value by key|value of a given key
-`getData()`|Retrieval of all settings keys and values|object containing all key value pairs
+`getData()`|Getting all settings keys and values|object containing all key value pairs
 `init(modelObject, onValidPin, onInvalidPin)`|Initializing of settings passing settings model object and **optional** *onValidPin / onInvalidPin* actions|initialized settings model object as promise
 `store(key, value)`|Setting a value by key|changed setting value as promise
 
