@@ -13,11 +13,11 @@ This plugin provides a useful template for your app settings. The keys and value
 * storage as app preferences using the above mentioned plugin, otherwise in `localStorage`
 * touch id support if the [touch id plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
 
+## Screenshots
+ ![screenshot1](http://fs5.directupload.net/images/160429/rja79x62.png) ![screenshot2](http://fs5.directupload.net/images/160429/8tmii2s9.png) ![screenshot3](http://fs5.directupload.net/images/160429/yjl9yyip.png)
+
 ## Demo 
 ![demo1](http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif)
-
-## Screenshots
-![screenshot1](http://fs5.directupload.net/images/160429/8tmii2s9.png) ![screenshot2](http://fs5.directupload.net/images/160429/yjl9yyip.png)
 
 ## Usage 
 1. [Buy](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
