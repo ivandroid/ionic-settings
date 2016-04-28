@@ -150,6 +150,7 @@ This plugin provides a useful template for your app settings. The keys and value
                                 onClick: function() {
                                     alert('Hello world!');
                                 }
+                                icon: 'ion-disc'
                             },
                             myPin: {
                                 type: 'pin',
