@@ -2,7 +2,7 @@
 
 #### Changes
 
-* **ui:** improved pin modal appearance
+* **ui:** improved pin view appearance
 * **setting types:** added range and input setting type 
 
 ### 1.0.0 (2016-04-25)
