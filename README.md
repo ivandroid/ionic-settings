@@ -123,7 +123,7 @@ This plugin provides a useful template for your app settings. The keys and value
     };
     ```
 
-5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a PIN, make sure to initialize your settings before the main state of your app is loaded like shown below. Use the `$ionicSettings.enteredWrongPin` event if you want to provide an action on entering a wrong PIN or get the wrong PIN value.
+5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a PIN, make sure to initialize your settings before the main state of your app is loaded like shown below. Use the `$ionicSettings.onValidPin` / `$ionicSettings.onInvalidPin` event if you want to provide an action on entering valid / invalid PIN or get the wrong PIN value.
     
     ```javascript
     // INITIALIZATION IN CONFIG PHASE
@@ -136,30 +136,37 @@ This plugin provides a useful template for your app settings. The keys and value
                 templateUrl: 'templates/tabs.html',
                 resolve: {
                     settings: function($rootScope, $ionicSettings, $ionicPopup) {
-                        // WRONG PIN EVENT: SHOWING A POPUP IF A WRONG PIN WAS ENTERED
-                        $rootScope.$on($ionicSettings.enteredWrongPin, function($event, value) {
-                            $ionicPopup.alert({
-                                title: 'PIN',
-                                template: 'Wrong pin: ' + value + '. Try again.'
-                            });
+                    // PIN INPUT EVENTS
+                    $rootScope.$on($ionicSettings.onInvalidPin, function($event, value) {
+                        $ionicPopup.alert({
+                            title: 'Fail',
+                            template: 'Wrong pin: ' + value + '. Try again.'
                         });
-                        var settings = {
-                            myButton: {
-                                type: 'button',
-                                label: 'Button',
-                                onClick: function() {
-                                    alert('Hello world!');
-                                }
-                                icon: 'ion-disc'
-                            },
-                            myPin: {
-                                type: 'pin',
-                                label: 'PIN',
-                                value: '',
-                                icon: 'ion-locked'
+                    });
+                    $rootScope.$on($ionicSettings.onValidPin, function() {
+                        $ionicPopup.alert({
+                            title: 'Success',
+                            template: 'Welcome!'
+                        });
+                    });
+                    // INITIALIZING SETTINGS
+                    var settings = {
+                        myButton: {
+                            type: 'button',
+                            label: 'Button',
+                            onClick: function() {
+                                alert('Hello world!');
                             }
-                        };
-                        return $ionicSettings.init(settings);
+                            icon: 'ion-disc'
+                        },
+                        myPin: {
+                            type: 'pin',
+                            label: 'PIN',
+                            value: '',
+                            icon: 'ion-locked'
+                        }
+                    };
+                    return $ionicSettings.init(settings);
                     }
                 }
             })
@@ -271,7 +278,8 @@ Using this service you have access to the following events and methods:
 event|description|return value
 ---|---|---
 `changed`|Settings changed event|key value pair of a changed setting 
-`enteredWrongPin`|Entered wrong pin event|wrong entered pin
+`onValidPin`|Entered correct pin event|wrong entered pin
+`onInvalidPin`|Entered wrong pin event|none
 
 method|description|return-value
 ---|---|---
