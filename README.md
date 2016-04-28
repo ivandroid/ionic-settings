@@ -278,8 +278,8 @@ Using this service you have access to the following events and methods:
 event|description|return value
 ---|---|---
 `changed`|Settings changed event|key value pair of a changed setting 
-`onValidPin`|Entered correct pin event|wrong entered pin
-`onInvalidPin`|Entered wrong pin event|none
+`onValidPin`|Entered correct pin event|none
+`onInvalidPin`|Entered wrong pin event|wrong entered pin value
 
 method|description|return-value
 ---|---|---
