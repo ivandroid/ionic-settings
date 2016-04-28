@@ -6,7 +6,7 @@ This plugin provides a useful template for your app settings. The keys and value
 [Get code!](https://gumroad.com/l/lQUJ#)  
 
 ## Demo 
-![demo1](http://i.giphy.com/l3V0JcNLG7YbMY4Qo.gif)
+![demo1](http://i.giphy.com/26AHvh5QyvcKmmPMA.gif)
 
 ## Features 
 * 5 setting types: `selection`, `toggle`, `input`, `range` and `pin` for app protection (using TOUCH ID if the [plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed)
