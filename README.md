@@ -15,6 +15,7 @@ This plugin provides a useful template for your app settings. The keys and value
 * including settings into a view or show them as modal
 * customizing of settings appearance (color, icons and button positions)
 * storage as app preferences using the above mentioned plugin, otherwise in `localStorage`
+* touch id support if the [plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
 
 ## Usage 
 1. Download the zip file including the plugin and an example app. 
