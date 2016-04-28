@@ -123,7 +123,7 @@ This plugin provides a useful template for your app settings. The keys and value
     };
     ```
 
-5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like shown below. Use the `$ionicSettings.onValidPin` / `$ionicSettings.onInvalidPin` events if you want to provide an action on entering valid / invalid pin.
+5. To initialize your app settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like shown below and provide two additional optional function parameters to provide actions on entering correct or wrong pin.
     
     ```javascript
     // INITIALIZATION IN CONFIG PHASE
@@ -135,21 +135,20 @@ This plugin provides a useful template for your app settings. The keys and value
                 abstract: true,
                 templateUrl: 'templates/tabs.html',
                 resolve: {
-                    settings: function($rootScope, $ionicSettings, $ionicPopup) {
-                        // PIN INPUT EVENTS
-                        $rootScope.$on($ionicSettings.onInvalidPin, function($event, value) {
-                            $ionicPopup.alert({
-                                title: 'Fail',
-                                template: 'Wrong pin: ' + value + '. Try again.'
-                            });
-                        });
-                        $rootScope.$on($ionicSettings.onValidPin, function() {
+                    settings: function($ionicSettings, $ionicPopup) {
+                        // INITIALIZING SETTINGS
+                        function onValidPin() {
                             $ionicPopup.alert({
                                 title: 'Success',
                                 template: 'Welcome!'
                             });
+                        }; 
+                        function onInvalidPin() {
+                            $ionicPopup.alert({
+                                title: 'Fail',
+                                template: 'Wrong pin! Try again.'
+                            });
                         });
-                        // INITIALIZING SETTINGS
                         var settings = {
                             myButton: {
                                 type: 'button',
@@ -166,7 +165,7 @@ This plugin provides a useful template for your app settings. The keys and value
                                 icon: 'ion-locked'
                             }
                         };
-                        return $ionicSettings.init(settings);
+                        return $ionicSettings.init(settings, onValidPin, onInvalidPin);
                     }
                 }
             })
@@ -285,8 +284,8 @@ method|description|return-value
 ---|---|---
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Retrieval of all settings keys and values|object containing all key value pairs
-`init(modelObject)`|Initializing of settings|settings model object
-`store(key, value)`|Setting a value by key|promise
+`init(modelObject, onValidPin, onInvalidPin)`|Initializing of settings passing a settings model object and *onValidPin / onInvalidPin* actions|initialized settings model object as promise
+`store(key, value)`|Setting a value by key|changed setting value as promise
 
 ## Suggestions
 
