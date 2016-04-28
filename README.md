@@ -5,7 +5,7 @@ This plugin provides a useful template for your app settings. The keys and value
 [corresponding plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
 
 ## Demo 
-![demo1](http://i.giphy.com/26AHvh5QyvcKmmPMA.gif)
+![demo1](http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif)
 
 ## Features 
 * 5 setting types: `selection`, `toggle`, `input`, `range` and `pin`
