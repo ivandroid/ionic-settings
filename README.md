@@ -275,7 +275,7 @@ Using this service you have access to the following events and methods:
 
 event|description|return value
 ---|---|---
-`changed`|Settings changed event|key value pair of a changed setting 
+`changed`|Setting changed event|key value pair of a changed setting 
 
 method|description|return-value
 ---|---|---
