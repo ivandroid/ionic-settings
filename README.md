@@ -1,9 +1,7 @@
 # ionic-settings
 
 This plugin provides a useful template for your app settings. The keys and values are stored as app preferences on condition that you use the 
-[corresponding plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`.
-
-[Get code!](https://gumroad.com/l/lQUJ#)  
+[corresponding plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
 
 ## Demo 
 ![demo1](http://i.giphy.com/26AHvh5QyvcKmmPMA.gif)
@@ -18,7 +16,7 @@ This plugin provides a useful template for your app settings. The keys and value
 * touch id support if the [plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
 
 ## Usage 
-1. Download the zip file including the plugin and an example app. 
+1. [Download](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
     
 2. Include the javascript and css files or the minified versions into your `index.html` file.
 
