@@ -15,7 +15,7 @@ This plugin provides a useful template for your app settings. The keys and value
 
 ## Screenshots
 <img src="http://fs5.directupload.net/images/160429/8tmii2s9.png" width="250"> <img src="http://fs5.directupload.net/images/160429/yjl9yyip.png" width="250"> 
-<img src="http://fs5.directupload.net/images/160429/apjtcg2q.png" width="250"> <img src=">http://fs5.directupload.net/images/160429/g3v52s7t.png" width="250"
+<img src="http://fs5.directupload.net/images/160429/apjtcg2q.png" width="250"> <img src=">http://fs5.directupload.net/images/160429/g3v52s7t.png" width="250">
 
 ## Demo 
 ![demo1](http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif)
