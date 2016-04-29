@@ -92,14 +92,14 @@ This plugin provides a useful template for your app settings. The keys and value
     var settingsWithGrouping = {
         group1: {
             label: 'Group 1', // GROUP LABEL (OPTIONAL)
-            mySelection: { // UNIQUE KEY
+            mySelection1: { // UNIQUE KEY
                 type: 'selection',
                 data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
                 label: 'Selection',
                 value: 'value 1',
                 icon: 'ion-clipboard'
             },
-            myToggle: {
+            myToggle1: {
                 type: 'toggle',
                 label: 'Toggle',
                 value: true,
@@ -107,20 +107,18 @@ This plugin provides a useful template for your app settings. The keys and value
             }
         },
         group2: {
-            label: 'Group 2',
-            myButton: {
-                type: 'button',
-                label: 'Button',
-                icon: 'ion-disc',
-                onClick: function() {
-                    alert('Hello world!');
-                }
+            mySelection2: {
+                type: 'selection',
+                data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
+                label: 'Selection',
+                value: 'value 1',
+                icon: 'ion-clipboard'
             },
-            myText: {
-                type: 'text',
-                label: 'Text',
-                icon: 'ion-document-text',
-                value: '<p class="padding">Hello World!</p>'
+            myToggle2: {
+                type: 'toggle',
+                label: 'Toggle',
+                value: true,
+                icon: 'ion-toggle'
             }
         }
     };
