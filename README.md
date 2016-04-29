@@ -126,7 +126,7 @@ This plugin provides a useful template for your app settings. The keys and value
                                 label: 'PIN',
                                 value: '',
                                 icon: 'ion-locked',
-                                onValid: function onValidPin() {
+                                onValid: function() {
                                     $ionicPopup.alert({
                                         title: 'Success',
                                         template: 'Welcome!'
