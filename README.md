@@ -89,11 +89,17 @@ This plugin provides a useful template for your app settings. The keys and value
             label: 'PIN',
             value: '',
             icon: 'ion-locked'
+            onValid: function() { // OPTIONAL ACTION ON VALID PIN
+                alert('Success!');
+            },
+            onInvalid: function() {  // OPTIONAL ACTION ON INVALID PIN
+                alert('Fail!');
+            }
         }
     };
     ```
 
-5. To initialize the settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object as first parameter. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded and pass two additional (optional) parameters to provide actions on entering correct or wrong pin.
+5. To initialize the settings invoke the `init()` method of the `$ionicSettings` service (returns promise) passing your settings model object. If you'd like to protect your app with a pin / touch id, make sure to initialize your settings before the main state of your app is loaded like shown below.
     
     ```javascript
     // INITIALIZATION IN CONFIG PHASE (USING PIN)
@@ -119,22 +125,22 @@ This plugin provides a useful template for your app settings. The keys and value
                                 type: 'pin',
                                 label: 'PIN',
                                 value: '',
-                                icon: 'ion-locked'
+                                icon: 'ion-locked',
+                                onValid: function onValidPin() {
+                                    $ionicPopup.alert({
+                                        title: 'Success',
+                                        template: 'Welcome!'
+                                    });
+                                },
+                                onInvalid: function($event, wrongPinValue) {
+                                    $ionicPopup.alert({
+                                        title: 'Fail',
+                                        template: 'Wrong pin: ' + wrongPinValue + '! Try again.'
+                                    });
+                                }
                             }
                         };
-                        function onValidPin() {
-                            $ionicPopup.alert({
-                                title: 'Success',
-                                template: 'Welcome!'
-                            });
-                        }; 
-                        function onInvalidPin($event, wrongPinValue) {
-                            $ionicPopup.alert({
-                                title: 'Fail',
-                                template: 'Wrong pin: ' + wrongPinValue + '! Try again.'
-                            });
-                        });
-                        return $ionicSettings.init(settings, onValidPin, onInvalidPin);
+                        return $ionicSettings.init(settings);
                     }
                 }
             })
@@ -251,7 +257,7 @@ method|description|return-value
 ---|---|---
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Getting all settings keys and values|object containing all key value pairs
-`init(modelObject, onValidPin, onInvalidPin)`|Initializing of settings passing your settings model object and **optional** *onValidPin / onInvalidPin* functions|initialized settings model object as promise
+`init(modelObject)`|Initializing of settings passing your settings model object|initialized settings model object as promise
 `store(key, value)`|Setting a value by key|changed setting value as promise
 
 ## Suggestions
