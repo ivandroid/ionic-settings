@@ -223,7 +223,7 @@ option|description|type|accepted values|default value
 color|color of setting elements|string|ionic color names|*positive*
 icon|settings icon|string|ion-icons|*ion-android-settings* for Android and *ion-ios-gear* for iOS
 iconClose|close button icon|string|ion-icons|*ion-android-close* for Android and *ion-ios-close-empty* for iOS
-iconClosePosition|close button icon position|string|right, left|*right*
+iconClosePosition|close button icon position|string|*right, left*|*right*
 modalAnimation|modal animation|string|ionic modal animation identifiers|custom animation for Android (ionic-settings.scss) and *slide-in-up* for iOS 
 title|settings title|string|text|*Settings*
 touchID|touch id support|boolean|*true, false*|*true*
