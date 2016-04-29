@@ -203,7 +203,7 @@ This plugin provides a useful template for your app settings. The keys and value
     </ion-view>
     ```
 
-    To use settings as modal add the directive `ion-settings-button` to the navigation bar. Pressing this button opens the modal.
+    To show the settings as modal add the directive `ion-settings-button` to the navigation bar. Pressing this button opens the modal.
 
     ```html
     <ion-view>
