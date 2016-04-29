@@ -250,7 +250,7 @@ option|description|type|accepted values|default value
 iconClose|close button icon|string|ion-icons|*ion-android-close* for Android and *ion-ios-close-empty* for iOS
 iconClosePosition|close button icon position|string|right, left|*right*
 iconSettings|settings icon|string|ion-icons|*ion-android-settings* for Android and *ion-ios-gear* for iOS
-modalAnimation|modal animation|string|ionic modal animation identifiers|custom animation for Android and *slide-in-up* for iOS 
+modalAnimation|modal animation|string|ionic modal animation identifiers|custom animation for Android (See ionic-settings.scss) and *slide-in-up* for iOS 
 theme|settings theme|string|ionic color names|*positive*
 title|settings title|string|text|*Settings*
 
