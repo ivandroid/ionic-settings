@@ -187,32 +187,6 @@ This plugin provides a useful template for your app settings. The keys and value
         </ion-content>
     </ion-view>
     ```
-7. You can listen to the `$ionicSettings.changed` event to get the key value pair of a currently changed setting. 
-    
-    ```javascript
-    angular.module('starter.controllers', [])
-    .controller('YourCtrl', function($scope, $ionicSettings) {
-        $scope.$on($ionicSettings.changed, function($event, changedSetting) {
-            alert(changedSetting.key + ' -> ' + changedSetting.value);
-        });
-    });
-    ```
-    
-8. Get and set values using `get()` and `store()` methods of the `$ionicSettings` service.
-
-    ```javascript
-    angular.module('starter.controllers', [])
-    .controller('YourCtrl', function($scope, $ionicSettings) {
-        $scope.store = function(key, value) {
-            $ionicSettings.store(key, value).then(function() {
-                // 
-            });
-        };
-        $scope.get = function(key) {
-            alert($ionicSettings.get(key));
-        };
-    });
-    ```
 
 ## Configuration provider
 
@@ -255,12 +229,39 @@ event|description|return-value
 ---|---|---
 `changed`|Setting changed event|object containing key and value of a changed setting 
 
+#### Example
+
+ ```javascript
+angular.module('starter.controllers', [])
+.controller('YourCtrl', function($scope, $ionicSettings) {
+    $scope.$on($ionicSettings.changed, function($event, changedSetting) {
+        alert(changedSetting.key + ' -> ' + changedSetting.value);
+    });
+});
+```
+
 method|description|return-value
 ---|---|---
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Getting all settings keys and values|object containing all key value pairs
 `init(modelObject)`|Initializing of settings passing your settings model object|initialized settings model object as promise
 `store(key, value)`|Setting a value by key|changed setting value as promise
+
+#### Example
+
+```javascript
+angular.module('starter.controllers', [])
+.controller('YourCtrl', function($scope, $ionicSettings) {
+    $scope.store = function(key, value) {
+        $ionicSettings.store(key, value).then(function() {
+            // 
+        });
+    };
+    $scope.get = function(key) {
+        alert($ionicSettings.get(key));
+    };
+});
+```
 
 ## Suggestions
 
