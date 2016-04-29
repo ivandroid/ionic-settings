@@ -35,7 +35,7 @@ This plugin provides a useful template for your app settings. The keys and value
     angular.module('starter', ['ionic', 'ionicSettings'])
     ```
     
-4. Settings are defined according to the following patterns: 
+4. Settings are defined according to the following pattern: 
 
     ```javascript
     var settings = {
