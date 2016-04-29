@@ -100,10 +100,10 @@ This plugin provides a useful template for your app settings. The keys and value
     angular.module('starter', ['ionic', 'ionicSettings'])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('tab', {
-                url: '/tab',
+            .state('main', {
+                url: '/main',
                 abstract: true,
-                templateUrl: 'templates/tabs.html',
+                templateUrl: 'templates/mains.html',
                 resolve: {
                     settings: function($ionicSettings, $ionicPopup) {
                         var settings = {
