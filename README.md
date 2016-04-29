@@ -174,7 +174,7 @@ This plugin provides a useful template for your app settings. The keys and value
     });
     // INITIALIZATION IN CONTROLLER (WITHOUT PIN)
     angular.module('starter.controllers', [])
-    .controller('InfoCtrl', function($scope, $ionicSettings) {
+    .controller('YourCtrl', function($scope, $ionicSettings) {
         $ionicSettings.init({
             mySelection: {
                 type: 'selection',
