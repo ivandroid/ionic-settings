@@ -128,10 +128,10 @@ This plugin provides a useful template for your app settings. The keys and value
                                 template: 'Welcome!'
                             });
                         }; 
-                        function onInvalidPin() {
+                        function onInvalidPin($event, wrongPinValue) {
                             $ionicPopup.alert({
                                 title: 'Fail',
-                                template: 'Wrong pin! Try again.'
+                                template: 'Wrong pin: ' + wrongPinValue + '! Try again.'
                             });
                         });
                         return $ionicSettings.init(settings, onValidPin, onInvalidPin);
