@@ -107,6 +107,7 @@ This plugin provides a useful template for your app settings. The keys and value
             }
         },
         group2: {
+            label: 'Group 2',
             mySelection2: {
                 type: 'selection',
                 data: ['four', 'five', 'six'],
