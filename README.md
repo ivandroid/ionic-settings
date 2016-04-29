@@ -17,7 +17,7 @@ This plugin provides a useful template for your app settings. The keys and value
 <img src="http://fs5.directupload.net/images/160429/8tmii2s9.png" width="200"> <img src="http://fs5.directupload.net/images/160429/yjl9yyip.png" width="200"> <img src="http://fs5.directupload.net/images/160429/apjtcg2q.png" width="200"> <img src="http://fs5.directupload.net/images/160429/g3v52s7t.png" width="200">
 
 ## Demo 
-<img src="http://i.giphy.com/xT1XGPwrM0egIeK9wI.gif" width="300">
+<img src="http://i.giphy.com/3o6oztisWm5VfKIRs4.gif" width="300">
 
 ## Usage 
 1. [Buy](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
