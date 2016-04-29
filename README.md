@@ -20,7 +20,7 @@ This plugin provides a useful template for your app settings. The keys and value
 <img src="http://i.giphy.com/3o6oztisWm5VfKIRs4.gif" width="300">
 
 ## Usage 
-1. [Buy](https://gumroad.com/l/lQUJ#)  the zip file including the plugin and an example app. 
+1. [Get](https://gumroad.com/l/lQUJ#) the zip file including the plugin and an example app. 
     
 2. Include the javascript and css files or the minified versions into your `index.html` file.
 
