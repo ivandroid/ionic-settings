@@ -148,7 +148,7 @@ This plugin provides a useful template for your app settings. The keys and value
                 data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
                 label: 'Selection',
                 value: 'value 1',
-                icon: 'ion-clipboard'
+                icon: 'ion-checkmark-round'
             },
             myToggle: {
                 type: 'toggle',
