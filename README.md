@@ -39,13 +39,13 @@ This plugin provides a useful template for your app settings. The keys and value
 
     ```javascript
     var settings = {
-        label1: 'Group 1', // GROUP LABEL (OPTIONAL)
-        mySelection: { // UNIQUE KEY
+        label1: 'Group 1', // OPTIONAL GROUP LABEL
+        mySelection: { // KEY
             type: 'selection',  // TYPE
-            data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'], // SELECTION ARRAY
+            data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
             label: 'Selection',  // LABEL
             value: 'value 1', // VALUE
-            icon: 'ion-checkmark-round' // ICON (OPTIONAL)
+            icon: 'ion-checkmark-round' // OPTIONAL ICON
         },
         myToggle: {
             type: 'toggle',
