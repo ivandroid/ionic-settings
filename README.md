@@ -243,7 +243,7 @@ This plugin provides a useful template for your app settings. The keys and value
 
 ## Configuration provider
 
-There is a provider named `$ionicSettingsConfigProvider`. The following options can be set in the configuration phase:
+There is a provider named `$ionicSettingsConfigProvider` where the following options can be set:
 
 option|description|type|accepted values|default value
 ---|---|---|---|---
