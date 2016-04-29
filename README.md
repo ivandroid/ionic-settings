@@ -103,7 +103,7 @@ This plugin provides a useful template for your app settings. The keys and value
             .state('main', {
                 url: '/main',
                 abstract: true,
-                templateUrl: 'templates/mains.html',
+                templateUrl: 'templates/main.html',
                 resolve: {
                     settings: function($ionicSettings, $ionicPopup) {
                         var settings = {
