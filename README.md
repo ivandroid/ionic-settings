@@ -38,7 +38,8 @@ This plugin provides a useful template for your app settings. The keys and value
 4. Settings are defined according to the following patterns: 
 
     ```javascript
-    var settingsWithoutGrouping = {
+    var settings = {
+        label1: 'Group 1', // GROUP LABEL (OPTIONAL)
         mySelection: { // UNIQUE KEY
             type: 'selection',  // TYPE
             data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'], // SELECTION ARRAY
@@ -67,13 +68,8 @@ This plugin provides a useful template for your app settings. The keys and value
             min: 0,
             max: 100,
             value: 50
-        }
-        myPin: {
-            type: 'pin',
-            label: 'PIN',
-            value: '',
-            icon: 'ion-locked'
         },
+        label2: 'Group 2',
         myButton: {
             type: 'button',
             label: 'Button',
@@ -88,39 +84,11 @@ This plugin provides a useful template for your app settings. The keys and value
             icon: 'ion-document-text',
             value: '<p class="padding">Hello World!</p>'
         }
-    };
-    var settingsWithGrouping = {
-        group1: {
-            label: 'Group 1', // GROUP LABEL (OPTIONAL)
-            mySelection1: { // UNIQUE KEY
-                type: 'selection',
-                data: ['one', 'two', 'three'],
-                label: 'Selection 1',
-                value: 'one',
-                icon: 'ion-checkmark'
-            },
-            myToggle1: {
-                type: 'toggle',
-                label: 'Toggle',
-                value: true,
-                icon: 'ion-toggle'
-            }
-        },
-        group2: {
-            label: 'Group 2',
-            mySelection2: {
-                type: 'selection',
-                data: ['four', 'five', 'six'],
-                label: 'Selection 2',
-                value: 'five',
-                icon: 'ion-checkmark'
-            },
-            myToggle2: {
-                type: 'toggle',
-                label: 'Toggle',
-                value: true,
-                icon: 'ion-toggle'
-            }
+        myPin: {
+            type: 'pin',
+            label: 'PIN',
+            value: '',
+            icon: 'ion-locked'
         }
     };
     ```
