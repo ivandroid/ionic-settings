@@ -225,7 +225,7 @@ This plugin provides a useful template for your app settings. The keys and value
     });
     ```
     
-8. Get and set setting values using `get()` and `store()` methods of the `$ionicSettings` service.
+8. Get and set values using `get()` and `store()` methods of the `$ionicSettings` service.
 
     ```javascript
     angular.module('starter.controllers', [])
