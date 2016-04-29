@@ -243,9 +243,9 @@ angular.module('starter', ['ionic', 'ionicSettings'])
 
 Using this service you have access to the following events and methods:
 
-event|description|return value
+event|description|return-value
 ---|---|---
-`changed`|Setting changed event|key value pair of a changed setting 
+`changed`|Setting changed event|object containing key and value of a changed setting 
 
 method|description|return-value
 ---|---|---
