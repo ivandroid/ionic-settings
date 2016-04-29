@@ -94,10 +94,10 @@ This plugin provides a useful template for your app settings. The keys and value
             label: 'Group 1', // GROUP LABEL (OPTIONAL)
             mySelection1: { // UNIQUE KEY
                 type: 'selection',
-                data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
-                label: 'Selection',
-                value: 'value 1',
-                icon: 'ion-clipboard'
+                data: ['one', 'two', 'three'],
+                label: 'Selection 1',
+                value: 'one',
+                icon: 'ion-checkmark'
             },
             myToggle1: {
                 type: 'toggle',
@@ -109,10 +109,10 @@ This plugin provides a useful template for your app settings. The keys and value
         group2: {
             mySelection2: {
                 type: 'selection',
-                data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
-                label: 'Selection',
-                value: 'value 1',
-                icon: 'ion-clipboard'
+                data: ['four', 'five', 'six'],
+                label: 'Selection 2',
+                value: 'five',
+                icon: 'ion-checkmark'
             },
             myToggle2: {
                 type: 'toggle',
