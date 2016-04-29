@@ -220,12 +220,13 @@ Via the `$ionicSettingsConfigProvider` the following options can be set in the c
 
 option|description|type|accepted values|default value
 ---|---|---|---|---
+color|color of setting elements|string|ionic color names|*positive*
+icon|settings icon|string|ion-icons|*ion-android-settings* for Android and *ion-ios-gear* for iOS
 iconClose|close button icon|string|ion-icons|*ion-android-close* for Android and *ion-ios-close-empty* for iOS
 iconClosePosition|close button icon position|string|right, left|*right*
-iconSettings|settings icon|string|ion-icons|*ion-android-settings* for Android and *ion-ios-gear* for iOS
 modalAnimation|modal animation|string|ionic modal animation identifiers|custom animation for Android (ionic-settings.scss) and *slide-in-up* for iOS 
-theme|settings theme|string|ionic color names|*positive*
 title|settings title|string|text|*Settings*
+touchID|touch id support|boolean|*true, false*|*true*
 
 #### Example
 ##### Code
@@ -233,12 +234,13 @@ title|settings title|string|text|*Settings*
 ```javascript
 angular.module('starter', ['ionic', 'ionicSettings'])
 .config(function($ionicSettingsConfigProvider) {
+    $ionicSettingsConfigProvider.setColor('assertive');
+    $ionicSettingsConfigProvider.setIcon('ion-wrench');
     $ionicSettingsConfigProvider.setIconClose('ion-close-circled');
     $ionicSettingsConfigProvider.setIconClosePosition('left');
-    $ionicSettingsConfigProvider.setIconSettings('ion-wrench');
     $ionicSettingsConfigProvider.setModalAnimation('slide-in-up');
-    $ionicSettingsConfigProvider.setTheme('assertive');
     $ionicSettingsConfigProvider.setTitle('My awesome settings');
+    $ionicSettingsConfigProvider.setTouchID(false);
 });
 ```
 
