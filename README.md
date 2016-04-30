@@ -1,4 +1,4 @@
-# <img src="http://fs5.directupload.net/images/160429/qliokhyp.png" width="30"> ionic-settings 
+# <img src="http://fs5.directupload.net/images/160430/hs83mnct.png" width="30"> ionic-settings 
 
 * [Info](#1-info)
     * [Features](#11-features)
