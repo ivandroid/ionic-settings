@@ -4,9 +4,9 @@
     * [Features](#11-features)
     * [Screenshots](#12-screenshots)
     * [Demo](#13-demo)
-    * [Author](#14-author)
-    * [License](#15-license)
-    * [Versions](#16-versions)
+    * [License](#14-license)
+    * [Versions](#15-versions)
+    * [Author](#16-author)
 * [Usage](#2-usage)
 * [Configuration provider](#3-configuration-provider)
 * [Services](#4-services)
@@ -32,22 +32,22 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
 ##1.3 Demo 
 <img src="http://i.giphy.com/3o6oztisWm5VfKIRs4.gif" width="300">
 
-###1.4 Author
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan%2eweber%40gmx%2ede&lc=DE&item_name=GithubRepositories&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
+
+##1.4 License
+
+[MIT](https://github.com/ivandroid/ionic-settings/blob/master/LICENSE)
+
+##1.5 Versions
+
+[CHANGELOG](https://github.com/ivandroid/ionic-settings/blob/master/CHANGELOG.md)
+
+###1.6 Author
 * E-Mail: ivan.weber@gmx.de
 * Twitter: https://twitter.com/hybrid_app
 * Github: https://github.com/ivandroid
 * Ionic Market: https://market.ionic.io/user/6540
 * Donations: You're welcome to donate. Any amount at any time! :-)
-
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan%2eweber%40gmx%2ede&lc=DE&item_name=GithubRepositories&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
-
-##1.5 License
-
-[MIT](https://github.com/ivandroid/ionic-settings/blob/master/LICENSE)
-
-##1.6 Versions
-
-[CHANGELOG](https://github.com/ivandroid/ionic-settings/blob/master/CHANGELOG.md)
 
 ##2. Usage 
 1. Get the files from here or install from bower:
