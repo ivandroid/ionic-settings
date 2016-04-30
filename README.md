@@ -1,10 +1,23 @@
 # <img src="http://fs5.directupload.net/images/160429/qliokhyp.png" width="30"> ionic-settings 
-### Ionic View ID: 120e45c6
 
+* [Info](#1-info)
+    * [Features](#11-features)
+    * [Screenshots](#12-screenshots)
+    * [Demo](#13-demo)
+    * [Author](#14-author)
+    * [License](#15-license)
+    * [Versions](#16-versions)
+* [Usage](#2-usage)
+* [Configuration provider](#3-configuration-provider)
+* [Services](#4-services)
+* [Directives](#5-directives)
+
+##1. Info
 This plugin provides a useful template for your app settings. The keys and values are stored as app preferences on condition that you have installed 
 [the app preferences plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
+You can test the plugin via the [ionic view app](http://view.ionic.io/) with the ID **141b234c**.
 
-## Features 
+##1.1 Features 
 * 5 setting types: `selection`, `toggle`, `input`, `range` and `pin`
 * 2 read-only types: `button` and `text`
 * grouping of settings
@@ -13,14 +26,35 @@ This plugin provides a useful template for your app settings. The keys and value
 * storage as app preferences using the above mentioned plugin, otherwise in `localStorage`
 * touch id support if the [touch id plugin](https://github.com/leecrossley/cordova-plugin-touchid) is installed
 
-## Screenshots
+##1.2 Screenshots
 <img src="http://fs5.directupload.net/images/160429/8tmii2s9.png" width="200"> <img src="http://fs5.directupload.net/images/160429/yjl9yyip.png" width="200"> <img src="http://fs5.directupload.net/images/160429/apjtcg2q.png" width="200"> <img src="http://fs5.directupload.net/images/160429/g3v52s7t.png" width="200">
 
-## Demo 
+##1.3 Demo 
 <img src="http://i.giphy.com/3o6oztisWm5VfKIRs4.gif" width="300">
 
-## Usage 
-1. [Get](https://gumroad.com/l/lQUJ#) the zip file including the plugin and an example app. 
+###1.4 Author
+* E-Mail: ivan.weber@gmx.de
+* Twitter: https://twitter.com/hybrid_app
+* Github: https://github.com/ivandroid
+* Ionic Market: https://market.ionic.io/user/6540
+* Donations: You're welcome to donate. Any amount at any time! :-)
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan%2eweber%40gmx%2ede&lc=DE&item_name=GithubRepositories&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
+
+##1.5 License
+
+[MIT](https://github.com/ivandroid/ionic-settings/blob/master/LICENSE)
+
+##1.6 Versions
+
+[CHANGELOG](https://github.com/ivandroid/ionic-settings/blob/master/CHANGELOG.md)
+
+##2. Usage 
+1. Get the files from here or install from bower:
+
+    ```
+    bower install ionic-settings
+    ``` 
     
 2. Include the javascript and css files or the minified versions into your `index.html` file.
 
@@ -166,19 +200,12 @@ This plugin provides a useful template for your app settings. The keys and value
     });
     ```
     
-6. To include your settings into a view simply use the `ion-settings` directive within the `ion-content` element.
-
-    ```html
+6. To include your settings into a view simply use the `ion-settings` directive within the `ion-content` element. To show the settings as modal add the directive `ion-settings-button` to the navigation bar. Pressing this button opens the modal.```html
     <ion-view>    
         <ion-content>
             <ion-settings></ion-settings>
         </ion-content>
     </ion-view>
-    ```
-
-    To show the settings as modal add the directive `ion-settings-button` to the navigation bar. Pressing this button opens the modal.
-
-    ```html
     <ion-view>
         <ion-nav-buttons side="right">
             <ion-settings-button></ion-settings-button>
@@ -188,7 +215,7 @@ This plugin provides a useful template for your app settings. The keys and value
     </ion-view>
     ```
 
-## Configuration provider
+##3. Configuration provider
 
 Via the `$ionicSettingsConfigProvider` the following options can be set in the configuration phase:
 
@@ -221,6 +248,7 @@ angular.module('starter', ['ionic', 'ionicSettings'])
 ##### Result
 <img src="http://i.giphy.com/3o6ozuojr5gpCve7bW.gif" width="300">
 
+##4. Services
 ### Service `$ionicSettings`
 
 Using this service you have access to the following events and methods:
@@ -263,19 +291,34 @@ angular.module('starter.controllers', [])
 });
 ```
 
-## Suggestions
+##5. Directives
 
-Make improvement suggestions! I will react as soon as possible!
+### Directive `ion-settings`
 
-## Versions
+Use this directive to include your settings into a view.
 
-[CHANGELOG](https://github.com/ivandroid/ionic-settings/blob/master/CHANGELOG.md)
+#### Example
 
-## Author
+```html
+<ion-view>    
+    <ion-content>
+        <ion-settings></ion-settings>
+    </ion-content>
+</ion-view>
+```
 
-☟|☟
----|---
-email|ivan.weber@gmx.de
-twitter|https://twitter.com/hybrid_app
-github|https://github.com/ivandroid
-ionic market|https://market.ionic.io/user/6540
+### Directive `ion-settings-button`
+
+Use this directive to include the settings button to the navigation bar and use settings as modal.
+
+#### Example
+
+```html
+<ion-view>
+    <ion-nav-buttons side="right">
+        <ion-settings-button></ion-settings-button>
+    </ion-nav-buttons>
+    <ion-content>
+    </ion-content>
+</ion-view>
+```
