@@ -259,6 +259,13 @@ event|description|return-value
 ---|---|---
 `changed`|Setting changed event|object containing key and value of a changed setting 
 
+method|description|return-value
+---|---|---
+`get(key)`|Getting a value by key|value of a given key
+`getData()`|Getting all settings keys and values|object containing all key value pairs
+`init(modelObject)`|Initializing of settings passing your settings model object|initialized settings model object as promise
+`store(key, value)`|Setting a value by key|changed setting value as promise
+
 #### Example
 
  ```javascript
@@ -269,15 +276,6 @@ angular.module('starter.controllers', [])
     });
 });
 ```
-
-method|description|return-value
----|---|---
-`get(key)`|Getting a value by key|value of a given key
-`getData()`|Getting all settings keys and values|object containing all key value pairs
-`init(modelObject)`|Initializing of settings passing your settings model object|initialized settings model object as promise
-`store(key, value)`|Setting a value by key|changed setting value as promise
-
-#### Example
 
 ```javascript
 angular.module('starter.controllers', [])
