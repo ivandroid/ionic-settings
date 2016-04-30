@@ -200,7 +200,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
     });
     ```
     
-6. To include your settings into a view simply use the `ion-settings` directive within the `ion-content` element. To show the settings as modal add the directive `ion-settings-button` to the navigation bar. Pressing this button opens the modal.```html
+6. To include your settings into a view simply use the `ion-settings` directive within the `ion-content` element. To show the settings as modal add the directive `ion-settings-button` to the navigation bar. Pressing this button opens the modal.
     
     ```html
     <ion-view>    
