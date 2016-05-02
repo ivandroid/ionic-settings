@@ -147,19 +147,20 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
                 resolve: {
                     settings: function($ionicSettings, $ionicPopup) {
                         var settings = {
-                            myButton: {
-                                type: 'button',
-                                label: 'Button',
-                                onClick: function() {
-                                    alert('Hello world!');
-                                }
-                                icon: 'ion-disc'
+                            toggle1: {
+                                type: 'toggle',
+                                label: 'Toggle 1',
+                                value: true
                             },
-                            myPin: {
+                            toggle2: {
+                                type: 'toggle',
+                                label: 'Toggle 2',
+                                value: false
+                            },
+                            pin: {
                                 type: 'pin',
                                 label: 'PIN',
                                 value: '',
-                                icon: 'ion-locked',
                                 onValid: function() {
                                     $ionicPopup.alert({
                                         title: 'Success',
