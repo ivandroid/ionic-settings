@@ -120,7 +120,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
         }
         myPin: {
             type: 'pin',
-            label: 'PIN',
+            label: 'PIN & Touch ID',
             value: '',
             icon: 'ion-locked'
             onValid: function() { // OPTIONAL ACTION ON VALID PIN
