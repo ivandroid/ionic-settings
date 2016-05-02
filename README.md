@@ -188,7 +188,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
                 type: 'selection',
                 data: ['one', 'two', 'three'],
                 label: 'Awesome Selection',
-                value: 'value 1'
+                value: 'two'
             },
             coolToggle: {
                 type: 'toggle',
