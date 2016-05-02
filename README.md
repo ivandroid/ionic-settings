@@ -184,18 +184,16 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
     angular.module('starter.controllers', [])
     .controller('YourCtrl', function($scope, $ionicSettings) {
         $ionicSettings.init({
-            mySelection: {
+            awesomeSelection: {
                 type: 'selection',
-                data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
-                label: 'Selection',
-                value: 'value 1',
-                icon: 'ion-checkmark-round'
+                data: ['one', 'two', 'three'],
+                label: 'Awesome Selection',
+                value: 'value 1'
             },
-            myToggle: {
+            coolToggle: {
                 type: 'toggle',
-                label: 'Toggle',
-                value: true,
-                icon: 'ion-toggle'
+                label: 'Cool toggle',
+                value: true
             }
         });
     });
