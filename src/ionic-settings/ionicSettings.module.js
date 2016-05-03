@@ -350,57 +350,31 @@
                                     '<button class="button button-icon {{iconClose}}" ng-if="iconClosePosition === \'right\'" ng-click="dismiss()"></button>' +
                                 '</ion-header-bar>' +
                                 '<ion-content class="center-vertical">' +
-                                    '<center>' +  
-                                        '<div class="row" style="margin-top: 30px;">' +
-                                            '<div class="col col-10" ng-repeat="$index in [1,2,3,4]" ng-if="!showing" ng-class="{\'ionic-settings-col-offset-30\': $index === 0}">' + 
-                                                '<i class="icon ionic-settings-icon-smaller" ng-class="{\'ion-ios-circle-outline\': value.length <= $index, \'ion-ios-circle-filled\': value.length > $index}"></i>' +
-                                            '</div>' +
-                                            '<div class="col col-10" ng-repeat="$index in [1,2,3,4]" ng-if="showing" ng-class="{\'ionic-settings-col-offset-30\': $index === 0}">' + 
-                                                '<span style="font-size: 38px;">{{value[$index]}}</span>' +
-                                            '</div>' +
+                                    '<div class="ionic-settings-numbers">' +  
+                                        '<div class="ionic-settings-numbers-row">' +
+                                            '<i class="icon ionic-settings-numbers-dot" ng-repeat="$index in [1,2,3,4]" ng-if="!showing" ng-class="{\'ion-ios-circle-outline\': value.length <= $index, \'ion-ios-circle-filled\': value.length > $index}"></i>' +
+                                            '<span class="ionic-settings-numbers-value" ng-repeat="$index in [1,2,3,4]" ng-if="showing">{{value[$index]}}</span>' +
                                         '</div>' +
-                                        '<div style="margin-top: 30px;">' +
-                                            '<div class="row">' +
-                                                '<div class="col col-25"' + 
-                                                     'ng-repeat="col in [1,2,3]"' + 
-                                                     'ng-class="{\'ionic-settings-col-offset-12\': $index === 0}">' +
-                                                    '<button class="button button-outline button-{{color}} ionic-settings-rounded" ng-click="addValue(col)">{{col}}</button>' +
-                                                '</div>' +
-                                            '</div>' +
-                                            '<div class="row"">' +
-                                                '<div class="col col-25"' + 
-                                                     'ng-repeat="col in [4,5,6]"' +
-                                                     'ng-class="{\'ionic-settings-col-offset-12\': $index === 0}">' +
-                                                    '<button class="button button-outline button-{{color}} ionic-settings-rounded" ng-click="addValue(col)">{{col}}</button>' +
-                                                '</div>' +
-                                            '</div>' +
-                                            '<div class="row">' +
-                                                '<div class="col col-25"' + 
-                                                     'ng-repeat="col in [7,8,9]"' +
-                                                     'ng-class="{\'ionic-settings-col-offset-12\': $index === 0}">' +
-                                                    '<button class="button button-outline button-{{color}} ionic-settings-rounded" ng-click="addValue(col)">{{col}}</button>' +
-                                                '</div>' +
-                                            '</div>' +
-                                            '<div class="row">' +
-                                                '<div class="col col-25 ionic-settings-col-offset-12">' +
-                                                    '<button class="button button-outline button-{{color}} ionic-settings-rounded" ng-hide="start" ng-click="clear()">C</button>' +
-                                                '</div>' +
-                                                '<div class="col col-25">' +
-                                                    '<button class="button button-outline button-{{color}} ionic-settings-rounded" ng-click="addValue(0)">0</button>' +
-                                                '</div>' +
-                                                '<div class="col col-25">' +
-                                                    '<button class="button button-outline button-{{color}} ionic-settings-rounded icon ion-eye"' + 
-                                                            'ng-hide="start"' +
-                                                            'ng-disabled="value.length !== 4"' +
-                                                            'ng-mousedown="showPin()"' +
-                                                            'ng-mouseup="hidePin()"' +
-                                                            'ng-touchstart="showPin()"' + 
-                                                            'ng-touchend="hidePin()">' +
-                                                    '</button>' +
-                                                '</div>' +
-                                            '</div>' +
+                                        '<div class="ionic-settings-numbers-row" ng-repeat="row in [0,1,2]">' +
+                                            '<button class="button button-outline button-{{color}} ionic-settings-numbers-button"' +
+                                                    'ng-repeat="col in [1,2,3]"' +
+                                                    'ng-click="addValue(row * 3 + col)">' +
+                                                '{{row * 3 + col}}' +
+                                            '</button>' +
                                         '</div>' +
-                                    '</center>' +
+                                        '<div class="ionic-settings-numbers-row">' +
+                                            '<button class="button button-outline button-{{color}} ionic-settings-numbers-button" ng-hide="start" ng-click="clear()">C</button>' +
+                                            '<button class="button button-outline button-{{color}} ionic-settings-numbers-button" ng-click="addValue(0)">0</button>' +
+                                            '<button class="button button-outline button-{{color}} ionic-settings-numbers-button icon ion-eye"' + 
+                                                    'ng-hide="start"' +
+                                                    'ng-disabled="value.length !== 4"' +
+                                                    'ng-mousedown="showPin()"' +
+                                                    'ng-mouseup="hidePin()"' +
+                                                    'ng-touchstart="showPin()"' + 
+                                                    'ng-touchend="hidePin()">' +
+                                            '</button>' +
+                                        '</div>' +
+                                    '</div>' +
                                 '</ion-content>' +
                             '</ion-modal-view>';
                             break;
