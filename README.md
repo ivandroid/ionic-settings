@@ -1,18 +1,12 @@
 # <img src="http://fs5.directupload.net/images/160430/hs83mnct.png" width="30"> ionic-settings 
 
-* [Info](#1-info)
-    * [Features](#11-features)
-    * [Screenshots](#12-screenshots)
-    * [Demo](#13-demo)
-    * [License](#14-license)
-    * [Versions](#15-versions)
-    * [Author](#16-author)
+* [Introduction](#1-introduction)
 * [Usage](#2-usage)
 * [Configuration provider](#3-configuration-provider)
 * [Services](#4-services)
 * [Directives](#5-directives)
 
-##1. Info
+##1. Introduction
 This plugin settings and lock screen for your ionic app. The keys and values are stored as app preferences on condition that you have installed 
 [the app preferences plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
 You can test the plugin via the [ionic view app](http://view.ionic.io/) with the ID **141b234c**.
@@ -30,7 +24,9 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
 <img src="http://fs5.directupload.net/images/160429/8tmii2s9.png" width="200"> <img src="http://fs5.directupload.net/images/160429/yjl9yyip.png" width="200"> <img src="http://fs5.directupload.net/images/160429/apjtcg2q.png" width="200"> <img src="http://fs5.directupload.net/images/160429/g3v52s7t.png" width="200">
 
 ##1.3 Demo 
-<img src="http://i.giphy.com/3o6oztisWm5VfKIRs4.gif" width="300">
+#### [Ionic Playground](http://play.ionic.io/app/f96ed475a321)  
+#### ![animation](https://dl.dropbox.com/s/mc15ng39ts5l0jk/demo1.gif)
+#### Note: To test the lock screen feature please reload the demo after defining a new pin.
 
 ##1.4 License
 
@@ -45,7 +41,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
 * Twitter: https://twitter.com/hybrid_app
 * Github: https://github.com/ivandroid
 * Ionic Market: https://market.ionic.io/user/6540
-* Donations: If you find this project useful and want support its development you can press the button below. Thanks in advance!
+* Your support: If you find this project useful and want support its development you can press the button below or star the project. Thanks in advance!
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan%2eweber%40gmx%2ede&lc=DE&item_name=GithubRepositories&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
 
@@ -117,12 +113,12 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
             label: 'Text',
             icon: 'ion-document-text',
             value: '<p class="padding">Hello World!</p>'
-        }
+        },
         myPin: {
             type: 'pin',
             label: 'PIN & Touch ID',
             value: '',
-            icon: 'ion-locked'
+            icon: 'ion-locked',
             onValid: function() { // OPTIONAL ACTION ON VALID PIN
                 alert('Success!');
             },
