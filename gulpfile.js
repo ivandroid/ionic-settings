@@ -16,7 +16,7 @@ var jshint = require('gulp-jshint');
 
 // Test project directory
 var testProjectDirectory1 = '/home/ivan/NetBeansProjects/com.successful.bablo/www';
-var testProjectDirectory2 = '/home/ivan/NetBeansProjects/app-ionicsettings/www';
+var testProjectDirectory2 = '/home/ivan/Dropbox/Arbeit/ionic-settings/example/www';
 
 // Root directory
 var rootDirectory = path.resolve('./');
