@@ -24,7 +24,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
 <img src="http://fs5.directupload.net/images/160429/8tmii2s9.png" width="200"> <img src="http://fs5.directupload.net/images/160429/yjl9yyip.png" width="200"> <img src="http://fs5.directupload.net/images/160429/apjtcg2q.png" width="200"> <img src="http://fs5.directupload.net/images/160429/g3v52s7t.png" width="200">
 
 ##1.3 Demo 
-#### Note: To test the lock screen feature respectively persistence of settings values please reload the demo after value changing.
+##### Note: To test the lock screen feature respectively settings persistence please reload the demo after value changing.
 #### [Ionic Playground](http://play.ionic.io/app/f96ed475a321)  
 #### ![animation](https://dl.dropbox.com/s/mc15ng39ts5l0jk/demo1.gif)
 
