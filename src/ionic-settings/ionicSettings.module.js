@@ -124,12 +124,6 @@
                     $scope.clear = function() {
                         $scope.value = "";
                     };
-
-                    $scope.deleteValue = function() {
-                        if ($scope.value.length > 0) {
-                            $scope.value = $scope.value.substring(0, $scope.value.length - 1);
-                        }
-                    };  
                     
                     $scope.dismiss = function() {
                         if (active.item.type === IONIC_SETTINGS_PIN) {
@@ -149,25 +143,28 @@
                     
                     $scope.doAction = function(key) {
                         active.modal = modals[key];
+                        active.item = $scope.data[key];
                         if (active.modal) {
-                            active.item = $scope.data[key];
-                            if (active.item.type === IONIC_SETTINGS_PIN && active.item.value.length === 4) {
-                                active.item.value = "";
+                            if (active.item.type === IONIC_SETTINGS_PIN) {
+                                if (active.item.value.length === 4) {
+                                    active.item.value = "";
+                                } else {
+                                    $scope.value = active.item.value;
+                                    active.modal.show();
+                                }
                             } else  {
-                                $scope.value = active.item.value;
                                 active.modal.show();
                             }
                         } else {
-                            var item = $scope.data[key];
-                            if (angular.isFunction(item.onClick)) {
-                                item.onClick();
-                            } else {
-                                $scope.$root.$broadcast($ionicSettings.changed, {
-                                    key: key,
-                                    value: $scope.value
-                                });
+                            if (angular.isFunction(active.item.onClick)) {
+                                active.item.onClick();
                             }
                         }
+                    };
+                    
+                    $scope.select = function(value) {
+                        active.item.value = value;
+                        $scope.dismiss();
                     };
                     
                     $scope.showPin = function() {
@@ -323,20 +320,10 @@
                                     '<button class="button button-icon {{iconClose}}" ng-if="iconClosePosition === \'right\'" ng-click="dismiss()"></button>' +
                                 '</ion-header-bar>' +
                                 '<ion-content>' +
-                                    '<label class="item item-radio"' + 
-                                           'collection-repeat="item in data.' + key + '.values"' + 
-                                           'item-height="54px"' +
-                                           'item-width="101%"' +
-                                           'ng-click="dismiss()">' +
-                                        '<input type="radio"' + 
-                                               'name="radio-group"' +
-                                               'ng-model="data.' + key + '.value"' +
-                                               'ng-value="item">' +
-                                        '<div class="radio-content">' +
-                                            '<div class="item-content disable-pointer-events">{{item}}</div>' +
-                                            '<i class="radio-icon disable-pointer-events icon ionic-settings-icon-larger {{color}} {{iconSelected}}"></i>' +
-                                        '</div>' +
-                                    '</label>' +
+                                    '<ion-item class="item-icon-right" ng-class="{\'active\': data.'+key+'.value === value}" ng-repeat="value in data.'+key+'.values" ng-click="select(value)">' +
+                                        '{{value}}' +
+                                        '<i class="icon ion-ios-checkmark-empty positive" ng-show="data.'+key+'.value === value"></i>' +
+                                    '</ion-item>' +
                                 '</ion-content>' +
                             '</ion-modal-view>';
                             break;

@@ -265,8 +265,8 @@ method|description|return-value
 
  ```javascript
 angular.module('starter.controllers', [])
-.controller('YourCtrl', function($scope, $ionicSettings) {
-    $scope.$on($ionicSettings.changed, function($event, changedSetting) {
+.controller('YourCtrl', function($rootScope, $ionicSettings) {
+    $rootScope.$on($ionicSettings.changed, function($event, changedSetting) {
         alert(changedSetting.key + ' -> ' + changedSetting.value);
     });
 });
