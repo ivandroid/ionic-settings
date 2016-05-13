@@ -72,7 +72,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
         label1: 'Group 1', // OPTIONAL GROUP LABEL
         mySelection: { // KEY
             type: 'selection',  // TYPE
-            data: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'],
+            values: ['value 1', 'value 2', 'value 3', 'value 4', 'value 5'], // IN THIS CASE: SELECTION ARRAY
             label: 'Selection',  // LABEL
             value: 'value 1', // VALUE
             icon: 'ion-checkmark-round' // OPTIONAL ICON
@@ -182,7 +182,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
         $ionicSettings.init({
             awesomeSelection: {
                 type: 'selection',
-                data: ['one', 'two', 'three'],
+                values: ['one', 'two', 'three'],
                 label: 'Awesome Selection',
                 value: 'two'
             },
@@ -259,7 +259,7 @@ method|description|return-value
 `get(key)`|Getting a value by key|value of a given key
 `getData()`|Getting all settings keys and values|object containing all key value pairs
 `init(modelObject)`|Initializing of settings passing your settings model object|initialized settings model object as promise
-`store(key, value)`|Setting a value by key|changed setting value as promise
+`set(key, value)`|Setting a value by key|none
 
 #### Example
 
@@ -275,10 +275,8 @@ angular.module('starter.controllers', [])
 ```javascript
 angular.module('starter.controllers', [])
 .controller('YourCtrl', function($scope, $ionicSettings) {
-    $scope.store = function(key, value) {
-        $ionicSettings.store(key, value).then(function() {
-            // 
-        });
+    $scope.set = function(key, value) {
+        $ionicSettings.set(key, value);
     };
     $scope.get = function(key) {
         alert($ionicSettings.get(key));

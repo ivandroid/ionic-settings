@@ -85,7 +85,6 @@
                     var modals = {};
                     
                     $scope.data = $ionicSettings.getData();
-                    $scope.groupCount = Object.keys($scope.data).length;
                     $scope.isAndroid = $ionicSettingsConfig.isAndroid;
                     $scope.iconClose = $ionicSettingsConfig.iconClose;
                     $scope.iconClosePosition = $ionicSettingsConfig.iconClosePosition;
@@ -325,7 +324,7 @@
                                 '</ion-header-bar>' +
                                 '<ion-content>' +
                                     '<label class="item item-radio"' + 
-                                           'collection-repeat="item in data.' + key + '.data"' + 
+                                           'collection-repeat="item in data.' + key + '.values"' + 
                                            'item-height="54px"' +
                                            'item-width="101%"' +
                                            'ng-click="dismiss()">' +
@@ -552,6 +551,10 @@
                 
                 return q.promise;
             };
+            
+            self.set = function(key, value) {
+                data[key].value = value;
+            };
 
             self.store = function(key, value) {
                 var q = $q.defer();
@@ -566,6 +569,10 @@
                     q.resolve(localStorage[key]);
                 }
                 return q.promise;
+            };
+            
+            self.setSelectionValues = function(key, values) {
+                angular.copy(values, data[key].values);
             };
             
             self.storeAll = function() {
