@@ -25,7 +25,7 @@ You can test the plugin via the [ionic view app](http://view.ionic.io/) with the
 
 ##1.3 Demo 
 ##### Note: To test the lock screen feature respectively settings persistence please reload the demo after value changing.
-#### [Ionic Playground](http://play.ionic.io/app/f96ed475a321)  
+#### [Ionic Playground](http://play.ionic.io/app/28ea71301b60)  
 #### ![animation](https://dl.dropbox.com/s/mc15ng39ts5l0jk/demo1.gif)
 
 ##1.4 License
