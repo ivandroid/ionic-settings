@@ -1,7 +1,7 @@
 /*!
  * Copyright 2016 Ivan Weber
  *
- * ionic-settings, v1.0.2
+ * ionic-settings, v1.0.1
  *
  * Licensed under the MIT license. Please see LICENSE for more information.
  *
