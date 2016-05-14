@@ -1,14 +1,17 @@
 {
   "name": "ionic-settings",
-  "version": "1.0.0",
+  "homepage": "https://github.com/ivandroid/ionic-settings",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Ivan Weber",
       "email": "ivan.weber@gmx.de"
     }
   ],
+  "license": "MIT",
   "main": [
-    "dist/ionic-settings.js"
+    "dist/ionic-settings.min.js",
+    "dist/ionic-settings.min.css"
   ],
   "ignore": [
     "src",

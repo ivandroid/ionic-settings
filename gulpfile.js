@@ -14,10 +14,6 @@ var jshint = require('gulp-jshint');
  * File patterns
  **/
 
-// Test project directory
-var testProjectDirectory1 = '/home/ivan/NetBeansProjects/com.successful.bablo/www';
-var testProjectDirectory2 = '/home/ivan/Dropbox/Arbeit/ionic-settings/example/www';
-
 // Root directory
 var rootDirectory = path.resolve('./');
 
@@ -47,23 +43,19 @@ gulp.task('build', function() {
         .pipe(gulp.dest('./dist/'))
         .pipe(uglify())
         .pipe(rename('ionic-settings.min.js'))
-        .pipe(gulp.dest('./dist'))
-        .pipe(gulp.dest(testProjectDirectory1 + '/lib/own'))
-        .pipe(gulp.dest(testProjectDirectory2 + '/lib/other'));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', function(done) {
-    gulp.src('./style/scss/ionic-settings.scss')
+    gulp.src('./dist/ionic-settings.scss')
         .pipe(sass())
         .on('error', sass.logError)
-        .pipe(gulp.dest('./style/css/'))
+        .pipe(gulp.dest('./dist/'))
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
         .pipe(rename({extname: '.min.css'}))
-        .pipe(gulp.dest('./style/css/'))
-        .pipe(gulp.dest(testProjectDirectory1 + '/css'))
-        .pipe(gulp.dest(testProjectDirectory2 + '/css'))
+        .pipe(gulp.dest('./dist/'))
         .on('end', done);
 });
 
