@@ -1,3 +1,9 @@
+### 1.0.2 (2016-05-15)
+
+#### Bug fixes
+
+* **selection** fixed issue with multiple selection components 
+
 ### 1.0.1 (2016-04-29)
 
 #### Changes
