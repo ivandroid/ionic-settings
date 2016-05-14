@@ -47,7 +47,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('sass', function(done) {
-    gulp.src('./dist/ionic-settings.scss')
+    gulp.src('./src/ionic-settings/ionic-settings.scss')
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(gulp.dest('./dist/'))
