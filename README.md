@@ -7,7 +7,7 @@
 * [Directives](#5-directives)
 
 ##1. Introduction
-This plugin settings and lock screen for your ionic app. The keys and values are stored as app preferences on condition that you have installed 
+This plugin provides settings and lock screen for your ionic app. The keys and values are stored as app preferences on condition that you have installed 
 [the app preferences plugin](https://github.com/apla/me.apla.cordova.app-preferences), otherwise they are stored in `localStorage`. 
 You can test the plugin via the [ionic view app](http://view.ionic.io/) with the ID **141b234c**.
 
