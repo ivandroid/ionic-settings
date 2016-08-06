@@ -1,14 +1,3 @@
-/*!
- * Copyright 2016 Ivan Weber
- *
- * ionic-settings, v1.0.2
- *
- * Licensed under the MIT license. Please see LICENSE for more information.
- *
- */
-
-/* global ionic, key, touchid, property */
-
 (function(angular) {
     
     angular.module("ionicSettings.constants", [])
@@ -88,6 +77,7 @@
                     $scope.isAndroid = $ionicSettingsConfig.isAndroid;
                     $scope.iconClose = $ionicSettingsConfig.iconClose;
                     $scope.iconClosePosition = $ionicSettingsConfig.iconClosePosition;
+                    $scope.iconDone = $ionicSettingsConfig.iconDone;
                     $scope.iconSelected = $ionicSettingsConfig.isAndroid ? "ion-android-done" : "ion-ios-checkmark-empty";
                     $scope.pin = {
                         active: false
@@ -126,15 +116,13 @@
                     };
                     
                     $scope.dismiss = function() {
-                        if (active.item.type === IONIC_SETTINGS_PIN) {
-                            if ($scope.value.length === 0 || $scope.value.length === 4) {
-                                active.item.value = $scope.value;
-                            }
-                            $scope.pin.active = $scope.value.length === 4;
+                        if (active.item.type === IONIC_SETTINGS_PIN && active.item.value.length !== 4) {
+                            $scope.clear();
+                            $scope.pin.active = false;
                         }
-                        active.modal.hide().then(function() {
-                            active = {};
-                        });
+                        if (active.modal.isShown()) {
+                            active.modal.hide();
+                        }
                     };
                     
                     $scope.hidePin = function() {
@@ -162,6 +150,11 @@
                         }
                     };
                     
+                    $scope.savePin = function() {
+                        active.item.value = $scope.value;
+                        active.modal.hide();
+                    };
+                    
                     $scope.select = function(value) {
                         active.item.value = value;
                         $scope.dismiss();
@@ -171,8 +164,10 @@
                         $scope.showing = true;
                     };
                     
+                    $scope.$on("modal.hidden", $scope.dismiss);
+                    
                     $scope.$on("$destroy", function() {
-                        for (key in modals) {
+                        for (var key in modals) {
                             if (modals[key]) {
                                 modals[key].remove();
                             }
@@ -232,11 +227,13 @@
     
     angular.module("ionicSettings.providers", []).provider("$ionicSettingsConfig", function() {
         var android = ionic.Platform.isAndroid();
+        var ios = ionic.Platform.isIOS();
         var color = "positive";
         var icon = android ? "ion-android-settings" : "ion-ios-gear";
         var iconClose = android ? "ion-android-close" : "ion-ios-close-empty";
         var iconClosePosition = "right";
-        var modalAnimation = android ? "ionic-settings-animate-modal-android" : "slide-in-up";
+        var iconDone = android ? "ion-android-done" : "ion-ios-checkmark-empty";
+        var modalAnimation = ios ? "slide-in-up" : "ionic-settings-animate-modal-android";
         var title = "Settings";
         var touchID = true;
         return {
@@ -270,6 +267,7 @@
                     icon: icon,
                     iconClose: iconClose,
                     iconClosePosition: iconClosePosition,
+                    iconDone: iconDone,
                     isAndroid: android,
                     modalAnimation: modalAnimation,
                     title: title,
@@ -283,6 +281,7 @@
         .factory("$ionicSettings", [
             "$ionicSettingsConfig",
             "$ionicModal",
+            "$log",
             "$q",
             "$rootScope",
             "$window",
@@ -291,6 +290,7 @@
             "IONIC_SETTINGS_TEXT", function(
             $ionicSettingsConfig,
             $ionicModal,
+            $log,
             $q,
             $rootScope,
             $window,
@@ -331,9 +331,15 @@
                             html = 
                             '<ion-modal-view>' +
                                 '<ion-header-bar ng-class="barColor">' +
-                                    '<button class="button button-icon {{iconClose}}" ng-if="iconClosePosition === \'left\'" ng-click="dismiss()"></button>' +
+                                    '<div class="buttons" ng-if="iconClosePosition === \'left\'">' +
+                                        '<button class="button button-icon {{iconDone}}" ng-show="value.length === 4" ng-click="savePin()"></button>' +
+                                        '<button class="button button-icon {{iconClose}}" ng-show="value.length !== 4" ng-click="dismiss()"></button>' +
+                                    '</div>' + 
                                     '<h1 class="title">' + item.label + '</h1>' +
-                                    '<button class="button button-icon {{iconClose}}" ng-if="iconClosePosition === \'right\'" ng-click="dismiss()"></button>' +
+                                    '<div class="buttons" ng-if="iconClosePosition === \'right\'">' +
+                                        '<button class="button button-icon {{iconDone}}" ng-show="value.length === 4" ng-click="savePin()"></button>' +
+                                        '<button class="button button-icon {{iconClose}}" ng-show="value.length !== 4" ng-click="dismiss()"></button>' +
+                                    '</div>' + 
                                 '</ion-header-bar>' +
                                 '<ion-content class="center-vertical">' +
                                     '<div class="ionic-settings-numbers">' +  
@@ -374,6 +380,7 @@
                                 '</ion-header-bar>' +
                                 '<ion-content>' + item.value + '</ion-content>' +
                             '</ion-modal-view>';
+                            angular.extend($scope, data[key].scopeObject);
                             break;
                     }     
                 } else {
@@ -391,7 +398,8 @@
                 if (html) {
                     return $ionicModal.fromTemplate(html, {
                         scope: $scope,
-                        animation: $ionicSettingsConfig.modalAnimation
+                        animation: $ionicSettingsConfig.modalAnimation,
+                        backdropClickToClose: false
                     }); 
                 }
             };
@@ -424,7 +432,7 @@
             
             self.fetchAll = function() {
                 var fetching = [];
-                for (key in data) {
+                for (var key in data) {
                     var item = data[key];
                     if (angular.isObject(item)) {
                         fetching.push(self.fetch(key));
@@ -450,7 +458,12 @@
             };
             
             self.get = function(key) {
-                return data[key].value;
+                if (data[key]) {
+                    return data[key].value;
+                } else {
+                    $log.error("Setting key " + key + " is not defined.");
+                    return;
+                }
             };
 
             self.getData = function() {
@@ -541,6 +554,7 @@
             
             self.set = function(key, value) {
                 data[key].value = value;
+                return self.store(key, value);
             };
 
             self.store = function(key, value) {
@@ -560,11 +574,12 @@
             
             self.setSelectionValues = function(key, values) {
                 angular.copy(values, data[key].values);
+                return self.set(key, "");
             };
             
             self.storeAll = function() {
                 var storing = [];
-                for (key in data) {
+                for (var key in data) {
                     var item = data[key];
                     if (angular.isObject(item)) {
                         storing.push(self.store(key, item.value));
